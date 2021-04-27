@@ -1,0 +1,28 @@
+
+body {
+font-family: "Robot", sans-serif;
+
+}
+
+.header {
+  padding: 1rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* show robots */
+.listStyle {
+  list-style: none;
+}
+
+.floatRight{
+  float: right;
+}
+
+.inline-block{
+  display: inline-block;
+}
+
+.spanSize{
+  font-size: 2rem;
+}
