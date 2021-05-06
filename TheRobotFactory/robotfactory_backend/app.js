@@ -1,3 +1,4 @@
+/** EXTERNAL DEPENDENCIES */
 var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
@@ -30,16 +31,23 @@ const { setCors } = require("./middleware/security");
 
 var app = express();
 
+/** LOGGING */
 app.use(logger("dev"));
+
+/** REQUEST PARSERS */
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+/** STATIC FILES*/
 app.use(express.static(path.join(__dirname, "public")));
+
+/**Set CORS TO OMIT SECURITY ERRORS */
 app.use(setCors);
 
 /** ERROR HANDLING */
-app.use((err,req,res,next)=> {
-  //respond to the rquestor with the error message
+app.use((err, req, res, next) => {
+  //respond to the requestor with the error message
   res.status(500).send({
     error: {
       message: err.message
@@ -47,10 +55,12 @@ app.use((err,req,res,next)=> {
   })
 })
 
-
+/** ROUTES */
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
-app.use("/robots",robotRouter);
+//router path: '/records'
+app.use("/robots", robotRouter);
 
+/** EXPORT PATH */
 module.exports = app;
 
