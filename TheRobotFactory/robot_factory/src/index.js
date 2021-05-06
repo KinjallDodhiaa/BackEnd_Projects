@@ -1,15 +1,17 @@
-import React, { useEffect, useState } from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Home from "./components/home";
-import OurRobots from "./components/ourRobots";
-import RobotDetails from "./components/robotDetails";
-import "./css/style.css";
+import React, { useEffect, useState } from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Home from './components/home';
+import OurRobots from './components/ourRobots';
+import RobotDetails from './components/robotDetails';
+import './css/style.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const axios = require("axios").default;
 
+
 const App = () => {
+
   const [robot, setRobot] = useState([]);
 
   useEffect(() => {
@@ -19,13 +21,15 @@ const App = () => {
   const sendGetRequest = async () => {
     try {
       await axios
-        .get("http://localhost:3001/robots")
+        .get("http://localhost:3002/robots/")
         .then((response) => setRobot(response.data));
     } catch (err) {
       // error handling
       console.error(err);
     }
   };
+
+
 
   return (
     <Router>
@@ -48,4 +52,4 @@ const App = () => {
   );
 };
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById('root'));

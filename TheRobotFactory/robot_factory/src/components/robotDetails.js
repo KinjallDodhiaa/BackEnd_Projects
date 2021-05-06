@@ -12,7 +12,7 @@ const RobotDetails = (props) => {
   const moveRobotRight = async (id) => {
     try {
       axios
-        .post("http://localhost:3001/right", { id: id })
+        .post("http://localhost:3002/robots/right", { id: id })
         .then((res) => props.sendGetRequest());
     } catch (error) {
       console.log(error);
@@ -22,7 +22,7 @@ const RobotDetails = (props) => {
   const moveRobotLeft = async (id) => {
     try {
       axios
-        .post("http://localhost:3001/left", { id: id })
+        .post("http://localhost:3002/robots/left", { id: id })
         .then((res) => props.sendGetRequest());
     } catch (error) {
       console.log(error);
@@ -32,7 +32,7 @@ const RobotDetails = (props) => {
   const moveRobotForward = async (id) => {
     try {
       axios
-        .post("http://localhost:3001/move", { id: id })
+        .post("http://localhost:3002/robots/move", { id: id })
         .then((res) => props.sendGetRequest());
     } catch (error) {
       console.log(error);

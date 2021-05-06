@@ -1,8 +1,10 @@
-import React, { useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 const axios = require("axios").default;
 
+
 const OurRobots = (props) => {
+
   const [name, setName] = useState("");
 
   const inputRef = useRef();
@@ -11,8 +13,11 @@ const OurRobots = (props) => {
     // TODO
     try {
       axios
-        .put("http://localhost:3001/create", {
+        .post("http://localhost:3002/robots/", {
           name: robotName,
+          posX: 0,
+          posY: 0,
+          direction: 'NORTH'
         })
         .then((response) => {
           props.sendGetRequest(name);
@@ -32,7 +37,7 @@ const OurRobots = (props) => {
   const deleteRobotsOnClick = async (id) => {
     try {
       axios
-        .delete("http://localhost:3001/delete", {
+        .delete("http://localhost:3002/robots/", {
           data: { id: id },
         })
         .then((response) => props.sendGetRequest());
@@ -43,16 +48,17 @@ const OurRobots = (props) => {
     console.log(id);
   };
 
+
   return (
     <section className="section-2">
       <div className="div-navbar">
         <Link to="/" className="navbar-link">
           Home
-        </Link>
+          </Link>
 
         <Link to="/ourRobots" className="navbar-link">
           Our Robots
-        </Link>
+          </Link>
       </div>
 
       <div className="section-2-banner">
@@ -65,32 +71,35 @@ const OurRobots = (props) => {
           aria-describedby="basic-addon3"
           placeholder="write the name of robot over here and click on create...."
         />
-        <button
-          onClick={() => addRobotsOnClick()}
-          type="button"
-          className="btn btn-secondary btn-lg"
-        >
-          Create
-        </button>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <button
+            onClick={() => addRobotsOnClick()}
+            type="button"
+            className="btn btn-secondary btn-lg"
+          >
+            Create
+            </button>
+        </div>
 
         <h2>Robots Collection</h2>
-        <ul className="list-group">
-          {props.show.map((robot, index) => (
+        <ul>
+          {props.show.length < 1 ? <h1>NO ROBOTS YET</h1> : props.show.map((robot, index) => (
             <div
               key={index}
               style={{ display: "flex", justifyContent: "space-between" }}
             >
               <Link to={`/robotDetails/${robot.id}`}>
-                <li className="list-group-item">{robot.name}</li>
+                <li className="btn btn-secondary btn-lg mb-2">
+                  {robot.name}
+                </li>
               </Link>
               <span
-                className="spanSize"
                 onClick={() => {
                   deleteRobotsOnClick(robot.id);
                 }}
               >
                 X
-              </span>
+                </span>
             </div>
           ))}
         </ul>
