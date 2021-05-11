@@ -1,0 +1,56 @@
+/* common styles */
+:root {
+  font-size: 62.5%;
+  --header-color: #ffd700;
+}
+
+body {
+  font-family: "Robot", sans-serif;
+}
+
+/* end of common styles */
+
+/* header */
+
+header {
+  background-color: var(--header-color);
+  padding: 3rem;
+  text-align: center;
+}
+
+/* color: #04083c; */
+
+header li{
+  list-style: none;
+  margin: 1rem;
+  font-size: 2rem;
+  display: inline-block;
+  color: #04083c; 
+
+}
+
+/* end of header */
+
+/* add posts */
+
+form label{
+    font-size: 1.8rem;
+    margin-top: 1rem;
+}
+
+form input {
+  height:4rem;
+}
+
+.button{
+    font-size: 3rem;
+}
+
+/* quil editor */
+.ql-editor{
+  min-height: 30rem;
+}
+/* end of quil editor */
+
+/* end of add posts */
+
