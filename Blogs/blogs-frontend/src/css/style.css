@@ -277,4 +277,12 @@ form input {
   text-align: left;
   text-indent: 3rem;
 }
+
+.postButton{
+  padding-left: 2rem;
+  padding-right: 2rem;
+  font-size: 2rem;
+  background-color:#d50000;
+  border: none;
+}
 /* end of posts */

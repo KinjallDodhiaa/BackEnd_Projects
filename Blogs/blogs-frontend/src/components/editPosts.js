@@ -69,7 +69,7 @@ else{
     var data = { id, title, content, name };
      try {
        axios
-         .post("http://localhost:3002/posts/update", data)
+         .post("http://localhost:3005/posts/update", data)
          .then((res) => {props.sendGetRequest(); window.location.replace('/showPosts')});
      } catch (error) {
        console.log(error);

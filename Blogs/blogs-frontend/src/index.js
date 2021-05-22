@@ -23,7 +23,7 @@ const App = () => {
     const sendGetRequest = async () => {
       try {
         await axios
-          .get("http://localhost:3002/posts/")
+          .get("http://localhost:3005/posts/")
           .then((response) => {setPost(response.data);console.log(response.data);});
       } catch (err) {
         console.error(err);

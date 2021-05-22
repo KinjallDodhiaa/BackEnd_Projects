@@ -47,10 +47,8 @@ const Posts = (props) => {
                   className="card-text"
                 ></p>
 
-                <Link
-                  to={`/editPosts/${foundPost.id}`}
-                >
-                  Edit
+                <Link className="p-5" to={`/editPosts/${foundPost.id}`}>
+                  <button className="btn btn-primary mt-5 postButton">Edit</button>
                 </Link>
               </div>
             </div>

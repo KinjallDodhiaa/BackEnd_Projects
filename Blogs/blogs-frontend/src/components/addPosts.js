@@ -21,7 +21,7 @@ const AddPosts = (props) => {
     // TODO
     try {
       axios
-        .post("http://localhost:3002/posts/", {
+        .post("http://localhost:3005/posts/", {
           title: postTitle,
           content: postContent,
           name: postName,
@@ -109,7 +109,7 @@ const AddPosts = (props) => {
               <button
                 onClick={() => addPostsOnClick()}
                 type="button"
-                className="btn btn-primary mt-5"
+                className="btn btn-primary mt-5 postButton"
               >
                 <h3>Save</h3>
               </button>
