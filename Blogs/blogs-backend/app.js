@@ -13,6 +13,9 @@ const FileSync = require('lowdb/adapters/FileSync');
 /** ROUTERS */
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+//import records router
+const postsRouter = require("./routes/posts");
+
 
 // CORS Security for the client website to disable same-orign-policy for only his website
 const { setCors } = require("./middleware/security")
@@ -48,6 +51,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 /** ROUTES */
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+//router path: '/posts'
+app.use("/posts", postsRouter);
+
 
 /** ERROR HANDLING */
 app.use((err, req, res, next) => {

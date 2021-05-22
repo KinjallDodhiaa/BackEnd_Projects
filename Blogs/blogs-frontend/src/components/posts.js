@@ -1,19 +1,64 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import React from "react";
+import { Link, useParams } from "react-router-dom";
+import '../css/style.css'
+
 
 const Posts = (props) => {
+  const { id } = useParams();
 
-    const {id} = useParams();
-
-    const foundPost = props.showPostDetails.find((post) => id == post.id);
+  const foundPost = props.showPostDetails.find((post) => id == post.id);
 
 
-    return (
-        <div className='container'>
-            {foundPost ? foundPost : null}
-            
+
+  return (
+    <section className="post-section">
+      {foundPost ? (
+        <div className="container blogs-container">
+          <div className="row">
+            <div className="card text-center">
+              <div className="card-header">
+                <ul className="nav nav-tabs card-header-tabs">
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/">
+                      Home
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/showPosts">
+                      Blogs
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link
+                      className="nav-link"
+                      to="/addPosts"
+                      tabindex="-1"
+                      aria-disabled="true"
+                    >
+                      Write Blog
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              <div className="card-body">
+                <h1 className="card-title">{foundPost.title}</h1>
+                <p
+                  dangerouslySetInnerHTML={{ __html: foundPost.content }}
+                  className="card-text"
+                ></p>
+
+                <Link
+                  to={`/editPosts/${foundPost.id}`}
+                >
+                  Edit
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
-    );
+      ) : null}
+    </section>
+  );
 };
 
 export default Posts;
