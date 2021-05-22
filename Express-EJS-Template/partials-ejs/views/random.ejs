@@ -1,0 +1,16 @@
+<%- include('partials/head') %>
+
+    <%- include('partials/navbar') %>
+
+    <div class="container">
+    <h1> Your Random Number is : <%= num  %></h1>
+    <!-- javascrpt conditionals -->
+    <% if(num%2 === 0) { %> 
+        <h2>The number is even!</h2>
+    <% } else { %> 
+        <h2>The number is odd!</h2>
+    <% } %> 
+        <h3>That number is : <%= num%2===0 ? 'EVEN' : 'ODD' %> </h3>
+    </div>
+
+<%- include('partials/footer') %>
