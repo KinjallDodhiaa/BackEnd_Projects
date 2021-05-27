@@ -3,11 +3,11 @@ import { Link, useParams } from "react-router-dom";
 import '../css/style.css'
 
 
+
 const Posts = (props) => {
   const { id } = useParams();
 
   const foundPost = props.showPostDetails.find((post) => id == post.id);
-
 
 
   return (
@@ -48,7 +48,9 @@ const Posts = (props) => {
                 ></p>
 
                 <Link className="p-5" to={`/editPosts/${foundPost.id}`}>
-                  <button className="btn btn-primary mt-5 postButton">Edit</button>
+                  <button className="btn btn-primary mt-5 postButton">
+                    Edit
+                  </button>
                 </Link>
               </div>
             </div>

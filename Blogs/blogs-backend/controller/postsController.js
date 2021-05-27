@@ -56,7 +56,7 @@ exports.updatePosts = (req, res, next) => {
     db.get("posts")
       .find({ id: postId })
       .assign({
-        title: req.body.title,
+        title: req.body.title,  
         content: req.body.content,
         name: req.body.name,
       })

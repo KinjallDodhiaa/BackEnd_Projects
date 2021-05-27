@@ -42,7 +42,7 @@ const App = () => {
             <AddPosts sendGetRequest={sendGetRequest} />
           </Route>
           <Route path="/showPosts">
-            <ShowPosts show={post} />
+            <ShowPosts show={post} sendGetRequest={sendGetRequest} />
           </Route>
           <Route path="/posts/:id">
             <Posts showPostDetails={post} sendGetRequest={sendGetRequest} />
