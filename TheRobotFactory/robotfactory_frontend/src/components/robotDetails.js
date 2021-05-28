@@ -63,27 +63,29 @@ const RobotDetails = (props) => {
               </ul>
               <h3>Heading</h3>
               <p>{foundRobot.direction}</p>
-              <button
-                onClick={() => {
-                  moveRobotRight(foundRobot.id);
-                }}
-              >
-                Right
-              </button>
-              <button
-                onClick={() => {
-                  moveRobotLeft(foundRobot.id);
-                }}
-              >
-                Left
-              </button>
-              <button
-                onClick={() => {
-                  moveRobotForward(foundRobot.id);
-                }}
-              >
-                Move
-              </button>
+              <div className='buttonDiv'>
+                <button
+                  onClick={() => {
+                    moveRobotRight(foundRobot.id);
+                  }}
+                >
+                  Right
+                </button>
+                <button
+                  onClick={() => {
+                    moveRobotLeft(foundRobot.id);
+                  }}
+                >
+                  Left
+                </button>
+                <button
+                  onClick={() => {
+                    moveRobotForward(foundRobot.id);
+                  }}
+                >
+                  Move
+                </button>
+              </div>
             </>
           ) : null}
         </div>

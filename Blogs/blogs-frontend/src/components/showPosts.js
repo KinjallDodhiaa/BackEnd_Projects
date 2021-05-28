@@ -76,15 +76,6 @@ const ShowPosts = (props) => {
               <span className="text-center">
                 <h3>X</h3>
               </span>
-
-              <h2>
-                The best “places” around the world & do they live up to the
-                hype?
-              </h2>
-              <p>posted by Kinjal Dodhia</p>
-              <span className="text-center">
-                <h3>X</h3>
-              </span>
             </div>
             <div className="col-lg-6 col-md-6 col-sm-12">
               <h1 className="mb-5 mt-5">Your Story</h1>

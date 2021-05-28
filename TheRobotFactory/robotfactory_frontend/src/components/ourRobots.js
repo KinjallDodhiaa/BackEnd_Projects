@@ -83,7 +83,7 @@ const OurRobots = (props) => {
 
         <h2>Robots Collection</h2>
         <ul>
-          {props.show.length < 1 ? <h1>NO ROBOTS YET</h1> : props.show.map((robot, index) => (
+          {props.show.length < 1 ? <h2>NO ROBOTS YET</h2> : props.show.map((robot, index) => (
             <div
               key={index}
               style={{ display: "flex", justifyContent: "space-between" }}

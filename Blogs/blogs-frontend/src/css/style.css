@@ -154,8 +154,8 @@ html {
 /* section 2 */
 
 .section-2{
-  height: 100%;
   width: 100%;
+  height: 100%;
   z-index: 1;
 }
 
@@ -219,7 +219,7 @@ html {
 
 form label{
   font-weight: 900;
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-top: 1rem;
 }
 
@@ -287,3 +287,223 @@ form input {
   border: none;
 }
 /* end of posts */
+
+/* Responsive */
+
+@media (min-width:768px){
+  .nav-link{
+    margin: 0 1rem;
+  }
+
+  .section-1-banner p{
+    text-align: center;
+  }
+}
+
+@media (min-width: 540px) {
+
+  .navbar{
+    right: 3rem;
+  }
+  .nav-link{
+    margin: 0 0.5rem;
+    width: 12rem;
+    height: 3rem;
+  }
+
+  .logo-link{
+    left: 2rem;
+  }
+
+  .logo {
+    height: 5rem;
+  }
+
+  .section-1-banner p{
+    font-size: 3rem;
+    text-align: center;
+  }
+}
+
+
+
+@media (max-width: 600px) {
+
+    .navbar{
+    right: 0.5rem;
+  }
+
+  .nav-link{
+    font-size: 1.2rem;
+    width: 10rem;
+    margin: 0.2rem;
+    
+  }
+
+    .logo-link{
+      top: 4rem;
+    left: 0.5rem;
+  }
+
+    .logo {
+    height: 3.5rem;
+  }
+
+    .section-1-banner p{
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+    .nav-link::before{
+    content:  '';
+    width: 150%;
+  }
+
+
+}
+
+@media (min-width:280px) and (max-width:653px){
+  .logo-link{
+    top: 4rem;
+    left: 0.3rem;
+  }
+
+    .logo {
+    height: 3rem;
+  }
+
+    .nav-link{
+    font-size: 1.2rem;
+    width: 7.5rem;
+    margin: 0.1rem;
+    
+  }
+
+  .nav-link::before{
+    width: 120%;
+    height: 3rem;
+  }
+
+    .section-1-banner p{
+    font-size: 2rem;
+    text-align: center;
+  }
+
+
+}
+
+@media (min-width:320px) and (max-width:568px){
+      .logo-link{
+      top: 4rem;
+    left: 0.5rem;
+  }
+
+    .logo {
+    height: 3rem;
+  }
+
+    .nav-link{
+    font-size: 1.2rem;
+    width: 9rem;
+    margin: 0.1rem;
+    
+  }
+
+    .section-1-banner p{
+    font-size: 2rem;
+    text-align: center;
+  }
+
+
+}
+
+@media (min-width:768px){
+
+    .section-2 h1{
+    font-size: 4rem;
+  }
+
+
+.section-2 h2{
+  font-size: 2rem;
+}
+
+  .imagesShowPost img{
+    height: 200vw;
+  }
+
+
+}
+
+@media (max-width:600px){
+  .section-2 h1{
+    font-size: 3rem;
+  }
+
+  .section-2 h2{
+    font-size: 2rem;
+  }
+
+  .imagesShowPost img{
+    height: 500vw;
+  }
+}
+
+
+
+
+@media (min-width:768px){
+
+
+  .imagesAddPost img{
+    height: 100vh
+  }
+
+}
+
+@media (max-width: 640px) {
+
+    .imagesAddPost img{
+    height: 250vw;
+  }
+
+  .blog-form{
+    margin-top: 35rem;
+  }
+
+}
+
+@media (min-width:280px) and (max-width:653px){
+  .blog-form{
+    margin-top: 40rem;
+  }
+
+    .imagesAddPost img{
+    height: 400vw;
+  }
+
+}
+
+/* @media(min-width:360px) and (max-width:640px){
+  .blog-form{
+    margin-top: 40rem;
+  }
+} */
+
+@media (min-width:320px) and (max-width:568px){
+
+  .blog-form{
+    margin-top: 45rem;
+  }
+      .imagesAddPost img{
+    height:300vw;
+  }
+
+
+}
+
+
+
+
+
+/* end of responsive */

@@ -1,3 +1,11 @@
 {
-  "robots": []
+  "robots": [
+    {
+      "name": "Eddy",
+      "posX": 0,
+      "posY": 0,
+      "direction": "NORTH",
+      "id": "9"
+    }
+  ]
 }
